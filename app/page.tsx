@@ -60,7 +60,7 @@ export default function Home() {
               </div>
               <div className="shrink-0">
                 <div className="h-20 w-20 rounded-full border border-white/20 overflow-hidden flex items-center justify-center">
-                  <span className="text-2xl">🪐</span>
+                  <Image src="/berlin.jpg" alt="Berlin avatar" width={80} height={80} className="h-full w-full object-cover" />
                 </div>
               </div>
             </section>
