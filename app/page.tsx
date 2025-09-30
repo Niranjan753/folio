@@ -4,6 +4,7 @@ import Image from "next/image";
 import Dock from "../components/Dock";
 import { Home as HomeIcon, Github, Instagram } from "lucide-react";
 import Noise from '../components/Noise';
+import PixelBlast from "../components/PixelBlast";
 
 export default function Home() {
   const items = [
@@ -48,6 +49,30 @@ export default function Home() {
           className="flex flex-1 flex-col items-center justify-center min-h-screen py-10 pb-40 font-sans"
           style={{ position: 'relative', zIndex: 1 }}
         >
+          {/* Move PixelBlast here, just under Noise, above all content */}
+          <div className="absolute inset-0 -z-10 pointer-events-none">
+            <PixelBlast
+              variant="circle"
+              pixelSize={6}
+              color="#B19EEF"
+              patternScale={3}
+              patternDensity={1.2}
+              pixelSizeJitter={0.5}
+              enableRipples
+              rippleSpeed={0.4}
+              rippleThickness={0.12}
+              rippleIntensityScale={1.5}
+              liquid
+              liquidStrength={0.12}
+              liquidRadius={1.2}
+              liquidWobbleSpeed={5}
+              speed={0.6}
+              edgeFade={0.25}
+              transparent
+              className=""
+              style={{}}
+            />
+          </div>
           <main className="w-full max-w-5xl space-y-20 mt-32 px-8 sm:px-20 md:px-28 lg:px-40">
             <section className="flex items-start justify-between gap-10">
               <div className="space-y-2">
@@ -133,7 +158,7 @@ export default function Home() {
             <footer className="py-8 text-center space-y-4">
               <div className="mx-auto h-1 w-8 rounded-full bg-white/50" />
               <p className="text-xs text-muted-foreground">
-                say hello on <a className="underline" href="#">Instagram</a>
+                say hello on <a className="underline" href="https://www.instagram.com/berlified/">Instagram</a>
               </p>
             </footer>
           </main>
