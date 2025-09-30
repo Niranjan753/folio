@@ -46,28 +46,27 @@ export default function Home() {
     >
       <div className="relative min-h-screen flex flex-col">
         <div
-          className="flex flex-1 flex-col items-center justify-center min-h-screen py-10 pb-40 font-sans"
-          style={{ position: 'relative', zIndex: 1 }}
+          className="flex flex-1 flex-col items-center justify-center min-h-screen py-10 pb-40 font-sans relative z-10"
         >
-          {/* Move PixelBlast here, just under Noise, above all content */}
-          <div className="absolute inset-0 -z-10 pointer-events-none">
+          {/* PixelBlast background layer (behind content, above base background) */}
+          <div className="absolute inset-0 z-0 pointer-events-none">
             <PixelBlast
               variant="circle"
-              pixelSize={6}
-              color="#B19EEF"
+              pixelSize={8}
+              color="#C8B5FF"
               patternScale={3}
-              patternDensity={1.2}
-              pixelSizeJitter={0.5}
+              patternDensity={1.6}
+              pixelSizeJitter={0.8}
               enableRipples
-              rippleSpeed={0.4}
-              rippleThickness={0.12}
-              rippleIntensityScale={1.5}
+              rippleSpeed={0.5}
+              rippleThickness={0.14}
+              rippleIntensityScale={2.2}
               liquid
-              liquidStrength={0.12}
-              liquidRadius={1.2}
+              liquidStrength={0.18}
+              liquidRadius={1.3}
               liquidWobbleSpeed={5}
               speed={0.6}
-              edgeFade={0.25}
+              edgeFade={0.05}
               transparent
               className=""
               style={{}}
@@ -154,6 +153,36 @@ export default function Home() {
                 ))}
               </div>
             </section>
+            <section className="space-y-3">
+              <h2 className="text-lg font-semibold text-center sm:text-left">some picks for you</h2>
+              <div className="flex flex-col gap-4 max-w-xl">
+                <div className="rounded-xl overflow-hidden border border-white/10">
+                  <iframe
+                    style={{ border: 0, width: '100%', height: 152 }}
+                    src="https://open.spotify.com/embed/track/2vb2scbxi8QkV8MWvrOxbW"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="rounded-xl overflow-hidden border border-white/10">
+                  <iframe
+                    style={{ border: 0, width: '100%', height: 152 }}
+                    src="https://open.spotify.com/embed/track/64gh6I06CuIunOtZhgP1LA"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="rounded-xl overflow-hidden border border-white/10">
+                  <iframe
+                    style={{ border: 0, width: '100%', height: 152 }}
+                    src="https://open.spotify.com/embed/track/709ZIqPHyFOpx2QdjmeWAM?si=31d6e9462d87449f"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </section>
+
 
             <footer className="py-8 text-center space-y-4">
               <div className="mx-auto h-1 w-8 rounded-full bg-white/50" />
