@@ -5,6 +5,7 @@ import Dock from "../components/Dock";
 import { Home as HomeIcon, Github, Instagram } from "lucide-react";
 import Noise from '../components/Noise';
 import PixelBlast from "../components/PixelBlast";
+import CircularText from "../components/CircularText";
 
 export default function Home() {
   const items = [
@@ -82,9 +83,10 @@ export default function Home() {
                   20 year old hacking internet
                 </p>
               </div>
-              <div className="shrink-0">
-                <div className="h-20 w-20 rounded-full border border-white/20 overflow-hidden flex items-center justify-center">
-                  <Image src="/berlin.jpg" alt="Berlin avatar" width={80} height={80} className="h-full w-full object-cover" />
+              <div className="shrink-0 relative">
+                <CircularText text="*BERLIN *NIRANJAN" onHover="speedUp" spinDuration={10} className="w-[140px] h-[140px] text-white/70" />
+                <div className="absolute inset-0 m-auto w-[76px] h-[76px] rounded-full overflow-hidden border border-white/20 flex items-center justify-center">
+                  <Image src="/berlin.jpg" alt="Berlin avatar" width={76} height={76} className="h-full w-full object-cover" />
                 </div>
               </div>
             </section>
@@ -156,22 +158,16 @@ export default function Home() {
             <section className="space-y-3">
               <h2 className="text-lg font-semibold text-center sm:text-left">some picks for you</h2>
               <div className="flex flex-col gap-4 max-w-xl">
+                
                 <div className="rounded-xl overflow-hidden border border-white/10">
                   <iframe
                     style={{ border: 0, width: '100%', height: 152 }}
-                    src="https://open.spotify.com/embed/track/2vb2scbxi8QkV8MWvrOxbW"
+                    src="https://open.spotify.com/embed/track/3FnwHtnBmLOfQgZIks9N7x?si=a61d5cb0c8724f69"
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="lazy"
                   />
                 </div>
-                <div className="rounded-xl overflow-hidden border border-white/10">
-                  <iframe
-                    style={{ border: 0, width: '100%', height: 152 }}
-                    src="https://open.spotify.com/embed/track/64gh6I06CuIunOtZhgP1LA"
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy"
-                  />
-                </div>
+  
                 <div className="rounded-xl overflow-hidden border border-white/10">
                   <iframe
                     style={{ border: 0, width: '100%', height: 152 }}
@@ -180,6 +176,26 @@ export default function Home() {
                     loading="lazy"
                   />
                 </div>
+
+                <div className="rounded-xl overflow-hidden border border-white/10">
+                  <iframe
+                    style={{ border: 0, width: '100%', height: 152 }}
+                    src="https://open.spotify.com/embed/track/2vlkTkPqdATznKHu9gD2c1?si=d8d9bd2953394796"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                  />
+                </div>
+                
+                <div className="rounded-xl overflow-hidden border border-white/10">
+                  <iframe
+                    style={{ border: 0, width: '100%', height: 152 }}
+                    src="https://open.spotify.com/embed/track/29f1UUWRj3NCD1WAaDwAOr?si=e970a1b2d7f240ee"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                  />
+                </div>
+
+
               </div>
             </section>
 
