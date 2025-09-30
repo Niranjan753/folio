@@ -149,7 +149,7 @@ export default function Home() {
             <section className="space-y-3 pt-8">
               <h2 className="text-lg font-semibold text-center sm:text-left">Skills</h2>
               <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
-                {["React","Next.js","Typescript","Python","Swift","MongoDB","Supabase","swiftUI","payloadcms","Organic Marketing"].map(tag => (
+                {["React","Next.js","Typescript","Python","Swift","MongoDB","Supabase","swiftUI","payloadcms","Organic Marketing", "Stripe checkout", "Stripe-connect","seo","performance marketing"].map(tag => (
                   <span key={tag} className="px-2 py-0.5 rounded-full bg-white/10 text-xs">{tag}</span>
                 ))}
               </div>
