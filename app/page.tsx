@@ -84,7 +84,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="shrink-0 relative">
-                <CircularText text="*BERLIN *NIRANJAN" onHover="speedUp" spinDuration={10} className="w-[140px] h-[140px] text-white/70" />
+                <CircularText text="*BERLIN *NIRANJAN" onHover="speedUp" spinDuration={20} className="w-[140px] h-[140px] text-white/70" />
                 <div className="absolute inset-0 m-auto w-[76px] h-[76px] rounded-full overflow-hidden border border-white/20 flex items-center justify-center">
                   <Image src="/berlin.jpg" alt="Berlin avatar" width={76} height={76} className="h-full w-full object-cover" />
                 </div>
