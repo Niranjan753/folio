@@ -1,5 +1,8 @@
-const config = {
-  plugins: ["@tailwindcss/postcss"],
-};
+// Enable Tailwind CSS v4 via the official PostCSS plugin
+// See: https://tailwindcss.com/docs/installation
 
-export default config;
+export default {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
+};
