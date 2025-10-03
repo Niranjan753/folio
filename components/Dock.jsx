@@ -7,6 +7,7 @@ import { Children, cloneElement, useEffect, useMemo, useRef, useState } from 're
 function DockItem({ children, className = '', onClick, mouseX, spring, distance, magnification, baseItemSize }) {
   const ref = useRef(null);
   const isHovered = useMotionValue(0);
+  const [isTouched, setIsTouched] = useState(false);
 
   const mouseDistance = useTransform(mouseX, val => {
     const rect = ref.current?.getBoundingClientRect() ?? {
@@ -18,6 +19,13 @@ function DockItem({ children, className = '', onClick, mouseX, spring, distance,
 
   const targetSize = useTransform(mouseDistance, [-distance, 0, distance], [baseItemSize, magnification, baseItemSize]);
   const size = useSpring(targetSize, spring);
+
+  const handleClick = (e) => {
+    // Reset hover state on mobile after click
+    isHovered.set(0);
+    setIsTouched(false);
+    if (onClick) onClick(e);
+  };
 
   // Add a subtle glow and scale effect on hover
   const scale = useTransform(isHovered, [0, 1], [1, 1.12]);
@@ -37,23 +45,30 @@ function DockItem({ children, className = '', onClick, mouseX, spring, distance,
       '0 4px 24px 0 rgba(255,255,255,0.15), 0 0 20px 4px rgba(255,255,255,0.2)'
     ]
   );
-  const borderColor = useTransform(isHovered, [0, 1], ['rgba(0,0,0,0.1)', 'rgba(0,0,0,0.3)']);
-
   return (
     <motion.div
       ref={ref}
       style={{
         width: size,
         height: size,
-        scale,
-        borderColor
+        scale
       }}
       onHoverStart={() => isHovered.set(1)}
       onHoverEnd={() => isHovered.set(0)}
       onFocus={() => isHovered.set(1)}
       onBlur={() => isHovered.set(0)}
-      onClick={onClick}
-      className={`relative inline-flex items-center justify-center rounded-2xl bg-white dark:bg-black border-2 transition-all duration-200 cursor-pointer overflow-visible text-black dark:text-white ${className}`}
+      onTouchStart={() => {
+        setIsTouched(true);
+        isHovered.set(1);
+      }}
+      onTouchEnd={() => {
+        setTimeout(() => {
+          isHovered.set(0);
+          setIsTouched(false);
+        }, 100);
+      }}
+      onClick={handleClick}
+      className={`relative inline-flex items-center justify-center rounded-2xl bg-white dark:bg-black border-2 border-neutral-200 dark:border-neutral-700 hover:border-neutral-300 dark:hover:border-neutral-600 transition-all duration-200 cursor-pointer overflow-visible text-black dark:text-white ${className}`}
       tabIndex={0}
       role="button"
       aria-haspopup="true"
