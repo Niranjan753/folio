@@ -6,6 +6,7 @@ import { Home as HomeIcon, Github, Instagram } from "lucide-react";
 import TrueFocus from "../components/TrueFocus";
 import BlurText from "../components/BlurText";
 import { motion } from "motion/react";
+import { ModeToggle } from "../components/ModeToggle";
 
 
 export default function Home() {
@@ -36,7 +37,8 @@ export default function Home() {
       label: "Traviflow",
       onClick: () => window.open("https://traviflow.com", "_blank", "noopener,noreferrer")
     },
-    { icon: <Instagram size={18} />, label: "Instagram", onClick: () => window.open("https://www.instagram.com/berlified/", "_blank", "noopener,noreferrer") }
+    { icon: <Instagram size={18} />, label: "Instagram", onClick: () => window.open("https://www.instagram.com/berlified/", "_blank", "noopener,noreferrer") },
+    { icon: <ModeToggle />, label: "Theme", onClick: () => {} }
   ];
   return (
       <div className="relative min-h-screen flex flex-col">

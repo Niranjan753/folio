@@ -21,15 +21,23 @@ function DockItem({ children, className = '', onClick, mouseX, spring, distance,
 
   // Add a subtle glow and scale effect on hover
   const scale = useTransform(isHovered, [0, 1], [1, 1.12]);
-  const boxShadow = useTransform(
+  const boxShadowLight = useTransform(
     isHovered,
     [0, 1],
     [
-      '0 2px 8px 0 rgba(0,0,0,0.25), 0 0px 0px 0 #fff0',
-      '0 4px 24px 0 rgba(255,255,255,0.10), 0 0 16px 2px #fff3'
+      '0 2px 8px 0 rgba(0,0,0,0.1)',
+      '0 4px 16px 0 rgba(0,0,0,0.2)'
     ]
   );
-  const borderColor = useTransform(isHovered, [0, 1], ['#222', '#fff']);
+  const boxShadowDark = useTransform(
+    isHovered,
+    [0, 1],
+    [
+      '0 2px 8px 0 rgba(0,0,0,0.25)',
+      '0 4px 24px 0 rgba(255,255,255,0.15), 0 0 20px 4px rgba(255,255,255,0.2)'
+    ]
+  );
+  const borderColor = useTransform(isHovered, [0, 1], ['rgba(0,0,0,0.1)', 'rgba(0,0,0,0.3)']);
 
   return (
     <motion.div
@@ -38,7 +46,6 @@ function DockItem({ children, className = '', onClick, mouseX, spring, distance,
         width: size,
         height: size,
         scale,
-        boxShadow,
         borderColor
       }}
       onHoverStart={() => isHovered.set(1)}
@@ -46,18 +53,17 @@ function DockItem({ children, className = '', onClick, mouseX, spring, distance,
       onFocus={() => isHovered.set(1)}
       onBlur={() => isHovered.set(0)}
       onClick={onClick}
-      className={`relative inline-flex items-center justify-center rounded-2xl bg-black border-2 transition-all duration-200 cursor-pointer overflow-visible ${className}`}
+      className={`relative inline-flex items-center justify-center rounded-2xl bg-white dark:bg-black border-2 transition-all duration-200 cursor-pointer overflow-visible text-black dark:text-white ${className}`}
       tabIndex={0}
       role="button"
       aria-haspopup="true"
     >
-      {/* Add a subtle animated ring on hover */}
+      {/* Glow effect on hover */}
       <motion.div
         className="absolute inset-0 pointer-events-none rounded-2xl"
         style={{
-          border: '2px solid transparent',
-          boxShadow: isHovered.get() ? '0 0 16px 4px #fff2' : 'none',
-          transition: 'box-shadow 0.2s'
+          boxShadow: boxShadowDark,
+          opacity: isHovered
         }}
       />
       {Children.map(children, child => cloneElement(child, { isHovered }))}
@@ -85,7 +91,7 @@ function DockLabel({ children, className = '', ...rest }) {
           animate={{ opacity: 1, y: -16, scale: 1 }}
           exit={{ opacity: 0, y: 0, scale: 0.95 }}
           transition={{ duration: 0.22, type: 'spring', stiffness: 200, damping: 18 }}
-          className={`${className} absolute -top-8 left-1/2 w-fit whitespace-pre rounded-lg border border-neutral-700 bg-black/80 px-3 py-1 text-xs text-white shadow-lg backdrop-blur-md`}
+          className={`${className} absolute -top-8 left-1/2 w-fit whitespace-pre rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white/90 dark:bg-black/80 px-3 py-1 text-xs text-black dark:text-white shadow-lg backdrop-blur-md`}
           role="tooltip"
           style={{ x: '-50%' }}
         >
@@ -102,8 +108,6 @@ function DockIcon({ children, className = '', isHovered }) {
     <motion.div
       className={`flex items-center justify-center rounded-xl transition-all duration-200 ${className}`}
       style={{
-        background: isHovered && isHovered.get() ? 'linear-gradient(135deg, #222 60%, #333 100%)' : 'transparent',
-        boxShadow: isHovered && isHovered.get() ? '0 2px 12px 0 #fff2' : 'none',
         padding: 6
       }}
     >
@@ -150,18 +154,15 @@ export default function Dock({
         className={`
           ${className}
           fixed bottom-2 left-1/2 transform -translate-x-1/2 z-50 flex items-end w-fit gap-2
-          rounded-2xl border border-neutral-800
-          bg-black/95
-          shadow-[0_8px_32px_0_rgba(0,0,0,0.45),0_1.5px_0_0_#fff1]
+          rounded-2xl border border-neutral-300 dark:border-neutral-800
+          bg-white/95 dark:bg-black/95
+          shadow-[0_8px_32px_0_rgba(0,0,0,0.15)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.45)]
           pb-2 px-3
           backdrop-blur-lg
-          ring-1 ring-white/10
+          ring-1 ring-black/5 dark:ring-white/10
         `}
         style={{
-          height: panelHeight,
-          background: 'rgba(0,0,0,0.95)',
-          border: '1.5px solid #222',
-          boxShadow: '0 8px 32px 0 rgba(0,0,0,0.45), 0 1.5px 0 0 #fff1'
+          height: panelHeight
         }}
         role="toolbar"
         aria-label="Application dock"
