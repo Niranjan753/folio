@@ -38,13 +38,6 @@ export default function Home() {
     { icon: <Instagram size={18} />, label: "Instagram", onClick: () => window.open("https://www.instagram.com/berlified/", "_blank", "noopener,noreferrer") }
   ];
   return (
-    <Noise
-      patternSize={250}
-      patternScaleX={1}
-      patternScaleY={1}
-      patternRefreshInterval={2}
-      patternAlpha={15}
-    >
       <div className="relative min-h-screen flex flex-col">
         <div
           className="flex flex-1 flex-col items-center justify-center min-h-screen py-10 pb-40 font-sans relative z-10"
@@ -95,9 +88,12 @@ export default function Home() {
               <h2 className="text-lg font-semibold text-center sm:text-left">About</h2>
               <p className="text-sm text-muted-foreground max-w-3xl mx-auto sm:mx-0">
                 tldr; learnt by hacking around on the internet.
+                
               </p>
+              <p style="font-size: 6px;">please hate this site</p>
+
               <p className="text-sm text-muted-foreground max-w-3xl mx-auto sm:mx-0">
-                i like technology and code. they make a dent in the universe.
+                i like technology and attention. They build software empires.
               </p>
             </section>
 
@@ -216,6 +212,5 @@ export default function Home() {
           />
         </div>
       </div>
-    </Noise>
   );
 }
