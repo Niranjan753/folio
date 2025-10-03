@@ -3,9 +3,6 @@
 import Image from "next/image";
 import Dock from "../components/Dock";
 import { Home as HomeIcon, Github, Instagram } from "lucide-react";
-import Noise from '../components/Noise';
-import PixelBlast from "../components/PixelBlast";
-import CircularText from "../components/CircularText";
 import TrueFocus from "../components/TrueFocus";
 
 
