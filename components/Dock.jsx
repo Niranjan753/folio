@@ -21,6 +21,7 @@ function DockItem({ children, className = '', onClick, mouseX, spring, distance,
   const size = useSpring(targetSize, spring);
 
   const handleClick = (e) => {
+    e.stopPropagation();
     // Reset hover state on mobile after click
     isHovered.set(0);
     setIsTouched(false);
@@ -28,15 +29,7 @@ function DockItem({ children, className = '', onClick, mouseX, spring, distance,
   };
 
   // Add a subtle glow and scale effect on hover
-  const scale = useTransform(isHovered, [0, 1], [1, 1.12]);
-  const boxShadowLight = useTransform(
-    isHovered,
-    [0, 1],
-    [
-      '0 2px 8px 0 rgba(0,0,0,0.1)',
-      '0 4px 16px 0 rgba(0,0,0,0.2)'
-    ]
-  );
+  const scale = useTransform(isHovered, [0, 1], [1, 1.08]);
   const boxShadowDark = useTransform(
     isHovered,
     [0, 1],
@@ -57,25 +50,27 @@ function DockItem({ children, className = '', onClick, mouseX, spring, distance,
       onHoverEnd={() => isHovered.set(0)}
       onFocus={() => isHovered.set(1)}
       onBlur={() => isHovered.set(0)}
-      onTouchStart={() => {
+      onTouchStart={(e) => {
+        e.stopPropagation();
         setIsTouched(true);
         isHovered.set(1);
       }}
-      onTouchEnd={() => {
+      onTouchEnd={(e) => {
+        e.stopPropagation();
         setTimeout(() => {
           isHovered.set(0);
           setIsTouched(false);
-        }, 100);
+        }, 200);
       }}
       onClick={handleClick}
-      className={`relative inline-flex items-center justify-center rounded-2xl bg-white dark:bg-black border-2 border-neutral-200 dark:border-neutral-700 hover:border-neutral-300 dark:hover:border-neutral-600 transition-all duration-200 cursor-pointer overflow-visible text-black dark:text-white ${className}`}
+      className={`relative inline-flex items-center justify-center rounded-xl sm:rounded-2xl bg-white dark:bg-black border border-neutral-200 dark:border-neutral-700 hover:border-neutral-300 dark:hover:border-neutral-600 active:scale-95 transition-all duration-200 cursor-pointer overflow-visible text-black dark:text-white ${className}`}
       tabIndex={0}
       role="button"
       aria-haspopup="true"
     >
       {/* Glow effect on hover */}
       <motion.div
-        className="absolute inset-0 pointer-events-none rounded-2xl"
+        className="absolute inset-0 pointer-events-none rounded-xl sm:rounded-2xl"
         style={{
           boxShadow: boxShadowDark,
           opacity: isHovered
@@ -143,6 +138,16 @@ export default function Dock({
 }) {
   const mouseX = useMotionValue(Infinity);
   const isHovered = useMotionValue(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const maxHeight = useMemo(
     () => Math.max(dockHeight, magnification + magnification / 2 + 4),
@@ -154,30 +159,35 @@ export default function Dock({
   // Stylized dock background: black, glassy, with border and shadow
   return (
     <motion.div
-      style={{ height, scrollbarWidth: 'none' }}
-      className="flex max-w-full items-center"
+      style={{ height: isMobile ? 'auto' : height, scrollbarWidth: 'none' }}
+      className="flex max-w-full items-center justify-center w-full px-2"
     >
       <motion.div
         onMouseMove={({ pageX }) => {
-          isHovered.set(1);
-          mouseX.set(pageX);
+          if (!isMobile) {
+            isHovered.set(1);
+            mouseX.set(pageX);
+          }
         }}
         onMouseLeave={() => {
-          isHovered.set(0);
-          mouseX.set(Infinity);
+          if (!isMobile) {
+            isHovered.set(0);
+            mouseX.set(Infinity);
+          }
         }}
         className={`
           ${className}
-          fixed bottom-2 left-1/2 transform -translate-x-1/2 z-50 flex items-end w-fit gap-2
-          rounded-2xl border border-neutral-300 dark:border-neutral-800
+          fixed bottom-4 sm:bottom-2 left-1/2 transform -translate-x-1/2 z-50 
+          flex items-center sm:items-end w-auto max-w-[95vw] gap-1.5 sm:gap-2
+          rounded-2xl sm:rounded-2xl border border-neutral-300 dark:border-neutral-800
           bg-white/95 dark:bg-black/95
           shadow-[0_8px_32px_0_rgba(0,0,0,0.15)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.45)]
-          pb-2 px-3
+          py-2 px-2 sm:px-3
           backdrop-blur-lg
           ring-1 ring-black/5 dark:ring-white/10
         `}
         style={{
-          height: panelHeight
+          minHeight: isMobile ? '56px' : panelHeight
         }}
         role="toolbar"
         aria-label="Application dock"
@@ -190,8 +200,8 @@ export default function Dock({
             mouseX={mouseX}
             spring={spring}
             distance={distance}
-            magnification={magnification}
-            baseItemSize={baseItemSize}
+            magnification={isMobile ? baseItemSize * 1.1 : magnification}
+            baseItemSize={isMobile ? 40 : baseItemSize}
           >
             <DockIcon>{item.icon}</DockIcon>
             <DockLabel>{item.label}</DockLabel>

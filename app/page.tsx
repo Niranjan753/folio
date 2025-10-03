@@ -38,15 +38,15 @@ export default function Home() {
       onClick: () => window.open("https://traviflow.com", "_blank", "noopener,noreferrer")
     },
     { icon: <Instagram size={18} />, label: "Instagram", onClick: () => window.open("https://www.instagram.com/berlified/", "_blank", "noopener,noreferrer") },
-    { icon: <ModeToggle />, label: "Theme", onClick: () => {} }
+    { icon: <ModeToggle />, label: "Theme" }
   ];
   return (
       <div className="relative min-h-screen flex flex-col">
         <div
-          className="flex flex-1 flex-col items-center justify-center min-h-screen py-8 pb-24 font-sans relative z-10"
+          className="flex flex-1 flex-col items-center justify-center min-h-screen py-8 pb-28 sm:pb-24 font-sans relative z-10"
         >
 
-          <main className="w-full max-w-4xl space-y-8 mt-12 px-6 sm:px-12 md:px-16 lg:px-20">
+          <main className="w-full max-w-4xl space-y-8 mt-12 mb-8 px-6 sm:px-12 md:px-16 lg:px-20">
             <section className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between gap-6">
               <div className="space-y-2 w-full sm:w-auto">
                 <BlurText
