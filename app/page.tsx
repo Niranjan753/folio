@@ -42,11 +42,11 @@ export default function Home() {
   return (
       <div className="relative min-h-screen flex flex-col">
         <div
-          className="flex flex-1 flex-col items-center justify-center min-h-screen py-10 pb-40 font-sans relative z-10"
+          className="flex flex-1 flex-col items-center justify-center min-h-screen py-8 pb-24 font-sans relative z-10"
         >
 
-          <main className="w-full max-w-5xl space-y-20 mt-32 px-8 sm:px-20 md:px-28 lg:px-40">
-            <section className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between gap-10">
+          <main className="w-full max-w-4xl space-y-8 mt-12 px-6 sm:px-12 md:px-16 lg:px-20">
+            <section className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between gap-6">
               <div className="space-y-2 w-full sm:w-auto">
                 <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-center sm:text-left">
                   Hi, Berlin here
@@ -85,9 +85,9 @@ export default function Home() {
               </p>
             </section>
 
-            <section className="space-y-4">
+            <section className="space-y-3">
               <h2 className="text-lg font-semibold text-center sm:text-left">Cool things I Built</h2>
-              <ul className="space-y-3">
+              <ul className="space-y-2">
                 {[
                   { title: "Pocketsflow", role: "Co-founder", date: "March 2024 - Present" },
                   { title: "Traviflow", role: "Co-founder", date: "September 2025 - Present" },
@@ -115,7 +115,7 @@ export default function Home() {
               </ul>
             </section>
 
-            <section className="space-y-4">
+            <section className="space-y-3">
               <h2 className="text-lg font-semibold text-center sm:text-left">Education</h2>
               <div className="flex items-center justify-between gap-3 rounded-xl border border-white/10 p-3">
                 <div className="flex items-center gap-3">
@@ -131,7 +131,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="space-y-3 pt-8">
+            <section className="space-y-3">
               <h2 className="text-lg font-semibold text-center sm:text-left">Skills</h2>
               <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
                 {["React","Next.js","Typescript","node","Python","Swift","MongoDB","Supabase","Express","swiftUI","payloadcms","Organic Marketing", "Stripe checkout", "Stripe-connect","seo","performance marketing"].map(tag => (
@@ -141,7 +141,7 @@ export default function Home() {
             </section>
             <section className="space-y-3">
               <h2 className="text-lg font-semibold text-center sm:text-left">some picks for you</h2>
-              <div className="flex flex-col gap-4 max-w-xl">
+              <div className="flex flex-col gap-3 max-w-xl">
                 
                 <div className="rounded-xl overflow-hidden border border-white/10">
                   <iframe
@@ -184,7 +184,7 @@ export default function Home() {
             </section>
 
 
-            <footer className="py-8 text-center space-y-4">
+            <footer className="py-6 text-center space-y-3">
               <div className="mx-auto h-1 w-8 rounded-full bg-white/50" />
               <p className="text-xs text-muted-foreground">
                 say hello on <a className="underline" href="https://www.instagram.com/berlified/">Instagram</a>
