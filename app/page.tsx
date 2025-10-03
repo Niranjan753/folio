@@ -15,8 +15,8 @@ export default function Home() {
         <Image
           src="/pocketsflow logo.png"
           alt="Pocketsflow"
-          width={40}
-          height={40}
+          width={18}
+          height={18}
           className="object-contain"
         />
       ),
@@ -42,30 +42,7 @@ export default function Home() {
         <div
           className="flex flex-1 flex-col items-center justify-center min-h-screen py-10 pb-40 font-sans relative z-10"
         >
-          {/* PixelBlast background layer (behind content, above base background) */}
-          <div className="absolute inset-0 z-0 pointer-events-none">
-            <PixelBlast
-              variant="circle"
-              pixelSize={8}
-              color="#C8B5FF"
-              patternScale={3}
-              patternDensity={1.6}
-              pixelSizeJitter={0.8}
-              enableRipples
-              rippleSpeed={0.5}
-              rippleThickness={0.14}
-              rippleIntensityScale={2.2}
-              liquid
-              liquidStrength={0.18}
-              liquidRadius={1.3}
-              liquidWobbleSpeed={5}
-              speed={0.6}
-              edgeFade={0.05}
-              transparent
-              className=""
-              style={{}}
-            />
-          </div>
+
           <main className="w-full max-w-5xl space-y-20 mt-32 px-8 sm:px-20 md:px-28 lg:px-40">
             <section className="flex items-start justify-between gap-10">
               <div className="space-y-2">
@@ -90,7 +67,7 @@ export default function Home() {
                 tldr; learnt by hacking around on the internet.
                 
               </p>
-              <p style="font-size: 6px;">please hate this site</p>
+
 
               <p className="text-sm text-muted-foreground max-w-3xl mx-auto sm:mx-0">
                 i like technology and attention. They build software empires.
