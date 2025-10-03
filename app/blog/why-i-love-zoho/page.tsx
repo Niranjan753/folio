@@ -110,7 +110,7 @@ const ZohoBlogPage = () => {
         <div className="flex items-center gap-6 text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
             <Calendar size={16} />
-            <span>December 2024</span>
+            <span>October 2025</span>
           </div>
           <div className="flex items-center gap-2">
             <Clock size={16} />
