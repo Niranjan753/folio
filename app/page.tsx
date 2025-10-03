@@ -4,6 +4,8 @@ import Image from "next/image";
 import Dock from "../components/Dock";
 import { Home as HomeIcon, Github, Instagram } from "lucide-react";
 import TrueFocus from "../components/TrueFocus";
+import BlurText from "../components/BlurText";
+import { motion } from "motion/react";
 
 
 export default function Home() {
@@ -45,12 +47,20 @@ export default function Home() {
           <main className="w-full max-w-4xl space-y-8 mt-12 px-6 sm:px-12 md:px-16 lg:px-20">
             <section className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between gap-6">
               <div className="space-y-2 w-full sm:w-auto">
-                <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-center sm:text-left">
-                  Hi, Berlin here
-                </h1>
-                <p className="text-base sm:text-lg text-muted-foreground text-center sm:text-left">
-                  20 year old hacking internet
-                </p>
+                <BlurText
+                  text="Hi, Berlin here"
+                  delay={100}
+                  animateBy="words"
+                  direction="top"
+                  className="text-3xl sm:text-4xl font-extrabold tracking-tight text-center sm:text-left"
+                />
+                <BlurText
+                  text="20 year old hacking internet"
+                  delay={120}
+                  animateBy="words"
+                  direction="top"
+                  className="text-base sm:text-lg text-muted-foreground text-center sm:text-left"
+                />
               </div>
               <div className="shrink-0 relative">
                 <TrueFocus
@@ -70,26 +80,50 @@ export default function Home() {
             </section>
 
             <section className="space-y-2">
-              <h2 className="text-lg font-semibold text-center sm:text-left">About</h2>
-              <p className="text-sm text-muted-foreground max-w-3xl mx-auto sm:mx-0">
-                tldr; learnt by hacking around on the internet.
-                
-              </p>
-
-
-              <p className="text-sm text-muted-foreground max-w-3xl mx-auto sm:mx-0">
-                i like technology and attention. They build software empires.
-              </p>
+              <BlurText
+                text="About"
+                delay={100}
+                animateBy="words"
+                direction="top"
+                className="text-lg font-semibold text-center sm:text-left"
+              />
+              <BlurText
+                text="tldr; learnt by hacking around on the internet."
+                delay={80}
+                animateBy="words"
+                direction="top"
+                className="text-sm text-muted-foreground max-w-3xl mx-auto sm:mx-0"
+              />
+              <BlurText
+                text="i like technology and attention. They build software empires."
+                delay={80}
+                animateBy="words"
+                direction="top"
+                className="text-sm text-muted-foreground max-w-3xl mx-auto sm:mx-0"
+              />
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-lg font-semibold text-center sm:text-left">Cool things I Built</h2>
+              <BlurText
+                text="Cool things I Built"
+                delay={100}
+                animateBy="words"
+                direction="top"
+                className="text-lg font-semibold text-center sm:text-left"
+              />
               <ul className="space-y-2">
                 {[
                   { title: "Pocketsflow", role: "Co-founder", date: "March 2024 - Present" },
                   { title: "Traviflow", role: "Co-founder", date: "September 2025 - Present" },
                 ].map((job, i) => (
-                  <li key={i} className="flex items-center justify-between gap-3 rounded-xl border border-white/10 p-3">
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    transition={{ delay: i * 0.1, duration: 0.5 }}
+                    viewport={{ once: true }}
+                    className="flex items-center justify-between gap-3 rounded-xl border border-white/10 p-3"
+                  >
                     <div className="flex items-center gap-3">
                       {(() => {
                         const logoSrc = job.title === "Pocketsflow" ? "/pocketsflow logo.png" : job.title === "Traviflow" ? "/traviflow logo.png" : null;
@@ -102,79 +136,172 @@ export default function Home() {
                         );
                       })()}
                       <div>
-                        <p className="font-medium text-base">{job.title}</p>
-                        <p className="text-xs text-muted-foreground">{job.role}</p>
+                        <BlurText
+                          text={job.title}
+                          delay={80}
+                          animateBy="words"
+                          direction="top"
+                          className="font-medium text-base"
+                        />
+                        <BlurText
+                          text={job.role}
+                          delay={100}
+                          animateBy="words"
+                          direction="top"
+                          className="text-xs text-muted-foreground"
+                        />
                       </div>
                     </div>
-                    <p className="text-xs text-muted-foreground whitespace-nowrap">{job.date}</p>
-                  </li>
+                    <BlurText
+                      text={job.date}
+                      delay={120}
+                      animateBy="words"
+                      direction="top"
+                      className="text-xs text-muted-foreground whitespace-nowrap"
+                    />
+                  </motion.li>
                 ))}
               </ul>
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-lg font-semibold text-center sm:text-left">Education</h2>
-              <div className="flex items-center justify-between gap-3 rounded-xl border border-white/10 p-3">
+              <BlurText
+                text="Education"
+                delay={100}
+                animateBy="words"
+                direction="top"
+                className="text-lg font-semibold text-center sm:text-left"
+              />
+              <motion.div
+                initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ delay: 0.1, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="flex items-center justify-between gap-3 rounded-xl border border-white/10 p-3"
+              >
                 <div className="flex items-center gap-3">
                   <div className="h-8 w-8 rounded-full bg-white/5 overflow-hidden flex items-center justify-center">
                     <Image src="/sairam logo.png" alt="Sri Sairam Engineering College logo" width={32} height={32} className="object-contain" />
                   </div>
                   <div>
-                    <p className="font-medium text-base">Sri Sairam Engineering College</p>
-                    <p className="text-xs text-muted-foreground">Computer Science and Engineering</p>
+                    <BlurText
+                      text="Sri Sairam Engineering College"
+                      delay={80}
+                      animateBy="words"
+                      direction="top"
+                      className="font-medium text-base"
+                    />
+                    <BlurText
+                      text="Computer Science and Engineering"
+                      delay={100}
+                      animateBy="words"
+                      direction="top"
+                      className="text-xs text-muted-foreground"
+                    />
                   </div>
                 </div>
-                <p className="text-xs text-muted-foreground whitespace-nowrap">2022 - 2026</p>
-              </div>
+                <BlurText
+                  text="2022 - 2026"
+                  delay={120}
+                  animateBy="words"
+                  direction="top"
+                  className="text-xs text-muted-foreground whitespace-nowrap"
+                />
+              </motion.div>
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-lg font-semibold text-center sm:text-left">Skills</h2>
+              <BlurText
+                text="Skills"
+                delay={100}
+                animateBy="words"
+                direction="top"
+                className="text-lg font-semibold text-center sm:text-left"
+              />
               <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
-                {["React","Next.js","Typescript","node","Python","Swift","MongoDB","Supabase","Express","swiftUI","payloadcms","Organic Marketing", "Stripe checkout", "Stripe-connect","seo","performance marketing"].map(tag => (
-                  <span key={tag} className="px-2 py-0.5 rounded-full bg-white/10 text-xs">{tag}</span>
+                {["React","Next.js","Typescript","node","Python","Swift","MongoDB","Supabase","Express","swiftUI","payloadcms","Organic Marketing", "Stripe checkout", "Stripe-connect","seo","performance marketing"].map((tag, index) => (
+                  <motion.span
+                    key={tag}
+                    initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
+                    whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                    transition={{ delay: index * 0.05, duration: 0.4 }}
+                    viewport={{ once: true }}
+                    className="px-2 py-0.5 rounded-full bg-white/10 text-xs"
+                  >
+                    {tag}
+                  </motion.span>
                 ))}
               </div>
             </section>
             <section className="space-y-3">
-              <h2 className="text-lg font-semibold text-center sm:text-left">some picks for you</h2>
+              <BlurText
+                text="some picks for you"
+                delay={100}
+                animateBy="words"
+                direction="top"
+                className="text-lg font-semibold text-center sm:text-left"
+              />
               <div className="flex flex-col gap-3 max-w-xl">
                 
-                <div className="rounded-xl overflow-hidden border border-white/10">
+                <motion.div
+                  initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ delay: 0.1, duration: 0.5 }}
+                  viewport={{ once: true }}
+                  className="rounded-xl overflow-hidden border border-white/10"
+                >
                   <iframe
                     style={{ border: 0, width: '100%', height: 152 }}
                     src="https://open.spotify.com/embed/track/3FnwHtnBmLOfQgZIks9N7x?si=a61d5cb0c8724f69"
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="lazy"
                   />
-                </div>
+                </motion.div>
   
-                <div className="rounded-xl overflow-hidden border border-white/10">
+                <motion.div
+                  initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                  viewport={{ once: true }}
+                  className="rounded-xl overflow-hidden border border-white/10"
+                >
                   <iframe
                     style={{ border: 0, width: '100%', height: 152 }}
                     src="https://open.spotify.com/embed/track/709ZIqPHyFOpx2QdjmeWAM?si=31d6e9462d87449f"
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="lazy"
                   />
-                </div>
+                </motion.div>
 
-                <div className="rounded-xl overflow-hidden border border-white/10">
+                <motion.div
+                  initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                  viewport={{ once: true }}
+                  className="rounded-xl overflow-hidden border border-white/10"
+                >
                   <iframe
                     style={{ border: 0, width: '100%', height: 152 }}
                     src="https://open.spotify.com/embed/track/2vlkTkPqdATznKHu9gD2c1?si=d8d9bd2953394796"
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="lazy"
                   />
-                </div>
+                </motion.div>
                 
-                <div className="rounded-xl overflow-hidden border border-white/10">
+                <motion.div
+                  initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ delay: 0.4, duration: 0.5 }}
+                  viewport={{ once: true }}
+                  className="rounded-xl overflow-hidden border border-white/10"
+                >
                   <iframe
                     style={{ border: 0, width: '100%', height: 152 }}
                     src="https://open.spotify.com/embed/track/29f1UUWRj3NCD1WAaDwAOr?si=e970a1b2d7f240ee"
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="lazy"
                   />
-                </div>
+                </motion.div>
 
 
               </div>
@@ -182,10 +309,32 @@ export default function Home() {
 
 
             <footer className="py-6 text-center space-y-3">
-              <div className="mx-auto h-1 w-8 rounded-full bg-white/50" />
-              <p className="text-xs text-muted-foreground">
-                say hello on <a className="underline" href="https://www.instagram.com/berlified/">Instagram</a>
-              </p>
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="mx-auto h-1 w-8 rounded-full bg-white/50"
+              />
+              <div className="text-xs text-muted-foreground">
+                <BlurText
+                  text="say hello on"
+                  delay={100}
+                  animateBy="words"
+                  direction="top"
+                  className="text-xs text-muted-foreground inline mr-1"
+                />
+                <motion.a
+                  initial={{ opacity: 0, filter: "blur(10px)" }}
+                  whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                  transition={{ delay: 0.3, duration: 0.4 }}
+                  viewport={{ once: true }}
+                  className="underline"
+                  href="https://www.instagram.com/berlified/"
+                >
+                  Instagram
+                </motion.a>
+              </div>
             </footer>
           </main>
 
