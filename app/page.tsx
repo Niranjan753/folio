@@ -46,8 +46,8 @@ export default function Home() {
         >
 
           <main className="w-full max-w-5xl space-y-20 mt-32 px-8 sm:px-20 md:px-28 lg:px-40">
-            <section className="flex items-start justify-between gap-10">
-              <div className="space-y-2">
+            <section className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between gap-10">
+              <div className="space-y-2 w-full sm:w-auto">
                 <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-center sm:text-left">
                   Hi, Berlin here
                 </h1>
