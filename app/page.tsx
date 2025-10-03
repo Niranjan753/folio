@@ -60,7 +60,7 @@ export default function Home() {
                   sentence="Berlin Niranjan"
                   manualMode={false}
                   blurAmount={5}
-                  borderColor="gold"
+                  borderColor="silver"
                   glowColor="rgba(221, 255, 0, 0.6)"
                   animationDuration={2}
                   pauseBetweenAnimations={1}

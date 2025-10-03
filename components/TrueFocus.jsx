@@ -59,14 +59,14 @@ const TrueFocus = ({
   };
 
   return (
-    <div className="relative flex gap-4 justify-center items-center flex-wrap" ref={containerRef}>
+    <div className="relative flex gap-2 sm:gap-4 justify-center items-center flex-wrap" ref={containerRef}>
       {words.map((word, index) => {
         const isActive = index === currentIndex;
         return (
           <span
             key={index}
             ref={el => (wordRefs.current[index] = el)}
-            className="relative text-[3rem] font-black cursor-pointer"
+            className="relative text-[1.5rem] sm:text-[2.5rem] lg:text-[3rem] font-black cursor-pointer"
             style={{
               filter: manualMode
                 ? isActive
