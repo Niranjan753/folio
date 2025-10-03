@@ -27,7 +27,7 @@ export function ModeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="relative flex items-center justify-center w-full h-full transition-transform duration-200 hover:scale-110"
+      className="relative flex items-center justify-center w-full h-full transition-transform duration-200 hover:cursor-pointer hover:scale-110"
       aria-label="Toggle theme"
     >
       <Sun className="h-[18px] w-[18px] absolute scale-100 rotate-0 transition-all duration-500 ease-in-out dark:scale-0 dark:rotate-180 opacity-100 dark:opacity-0" />
