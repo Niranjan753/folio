@@ -6,6 +6,8 @@ import { Home as HomeIcon, Github, Instagram } from "lucide-react";
 import Noise from '../components/Noise';
 import PixelBlast from "../components/PixelBlast";
 import CircularText from "../components/CircularText";
+import TrueFocus from "../components/TrueFocus";
+
 
 export default function Home() {
   const items = [
@@ -54,11 +56,20 @@ export default function Home() {
                 </p>
               </div>
               <div className="shrink-0 relative">
-                <CircularText text="*BERLIN *NIRANJAN" onHover="speedUp" spinDuration={20} className="w-[140px] h-[140px] text-white/70" />
-                <div className="absolute inset-0 m-auto w-[76px] h-[76px] rounded-full overflow-hidden border border-white/20 flex items-center justify-center">
-                  <Image src="/berlin.jpg" alt="Berlin avatar" width={76} height={76} className="h-full w-full object-cover" />
-                </div>
+                <TrueFocus
+                  sentence="Berlin Niranjan"
+                  manualMode={false}
+                  blurAmount={5}
+                  borderColor="gold"
+                  glowColor="rgba(221, 255, 0, 0.6)"
+                  animationDuration={2}
+                  pauseBetweenAnimations={1}
+                >
+                 
+                </TrueFocus>
+                
               </div>
+              
             </section>
 
             <section className="space-y-2">
@@ -123,7 +134,7 @@ export default function Home() {
             <section className="space-y-3 pt-8">
               <h2 className="text-lg font-semibold text-center sm:text-left">Skills</h2>
               <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
-                {["React","Next.js","Typescript","Python","Swift","MongoDB","Supabase","swiftUI","payloadcms","Organic Marketing", "Stripe checkout", "Stripe-connect","seo","performance marketing"].map(tag => (
+                {["React","Next.js","Typescript","node","Python","Swift","MongoDB","Supabase","Express","swiftUI","payloadcms","Organic Marketing", "Stripe checkout", "Stripe-connect","seo","performance marketing"].map(tag => (
                   <span key={tag} className="px-2 py-0.5 rounded-full bg-white/10 text-xs">{tag}</span>
                 ))}
               </div>
