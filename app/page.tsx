@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Dock from "../components/Dock";
-import { Home as HomeIcon, Github, Instagram } from "lucide-react";
+import { Home as HomeIcon, Github, Instagram, BookOpen } from "lucide-react";
 import TrueFocus from "../components/TrueFocus";
 import BlurText from "../components/BlurText";
 import { motion } from "motion/react";
@@ -12,6 +12,7 @@ import { ModeToggle } from "../components/ModeToggle";
 export default function Home() {
   const items = [
     { icon: <HomeIcon size={18} />, label: "Home", onClick: () => window.location.reload() },
+    { icon: <BookOpen size={18} />, label: "Blog", onClick: () => window.open("/blog", "_self") },
     { icon: <Github size={18} />, label: "GitHub", onClick: () => window.open("https://github.com/Niranjan753", "_blank", "noopener,noreferrer") },
     { icon: (
         <Image
