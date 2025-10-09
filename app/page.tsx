@@ -139,13 +139,45 @@ export default function Home() {
                         );
                       })()}
                       <div>
-                        <BlurText
-                          text={job.title}
-                          delay={80}
-                          animateBy="words"
-                          direction="top"
-                          className="font-medium text-base"
-                        />
+                        {job.title === "Pocketsflow" ? (
+                          <a
+                            href="https://pocketsflow.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline focus:underline"
+                          >
+                            <BlurText
+                              text={job.title}
+                              delay={80}
+                              animateBy="words"
+                              direction="top"
+                              className="font-medium text-base"
+                            />
+                          </a>
+                        ) : job.title === "Traviflow" ? (
+                          <a
+                            href="https://traviflow.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline focus:underline"
+                          >
+                            <BlurText
+                              text={job.title}
+                              delay={80}
+                              animateBy="words"
+                              direction="top"
+                              className="font-medium text-base"
+                            />
+                          </a>
+                        ) : (
+                          <BlurText
+                            text={job.title}
+                            delay={80}
+                            animateBy="words"
+                            direction="top"
+                            className="font-medium text-base"
+                          />
+                        )}
                         <BlurText
                           text={job.role}
                           delay={100}
