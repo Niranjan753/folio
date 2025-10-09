@@ -144,7 +144,7 @@ export default function Home() {
                             href="https://pocketsflow.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:underline focus:underline"
+                            className="hover:underline focus:underline group inline-flex items-center gap-1"
                           >
                             <BlurText
                               text={job.title}
@@ -153,13 +153,18 @@ export default function Home() {
                               direction="top"
                               className="font-medium text-base"
                             />
+                            <span className="inline-block transition-transform duration-200 translate-x-0 opacity-0 group-hover:translate-x-1 group-hover:opacity-100">
+                              <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                <path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </span>
                           </a>
                         ) : job.title === "Traviflow" ? (
                           <a
                             href="https://traviflow.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:underline focus:underline"
+                            className="hover:underline focus:underline group inline-flex items-center gap-1"
                           >
                             <BlurText
                               text={job.title}
@@ -168,6 +173,11 @@ export default function Home() {
                               direction="top"
                               className="font-medium text-base"
                             />
+                            <span className="inline-block transition-transform duration-200 translate-x-0 opacity-0 group-hover:translate-x-1 group-hover:opacity-100">
+                              <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                <path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </span>
                           </a>
                         ) : (
                           <BlurText
