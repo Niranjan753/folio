@@ -57,7 +57,7 @@ export default function Home() {
 </motion.div>
 </div>
         <div
-          className="flex flex-1 flex-col items-center justify-center min-h-screen py-8 pb-20 sm:pb-24 font-sans relative z-10"
+          className="flex flex-1 flex-col items-center justify-center min-h-screen py-8 pb-20 sm:pb-24 font-sans relative mt- 50"
         >
 
           <main className="w-full max-w-4xl space-y-8 px-6 sm:px-3 md:px-4 lg:px-20">
