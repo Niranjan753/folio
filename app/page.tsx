@@ -45,7 +45,7 @@ export default function Home() {
 
   return (
     
-      <div className="relative min-h-screen flex flex-col bg-black text-sm  pl-20 pr-20">
+      <div className="relative min-h-screen flex flex-col bg-black text-xs sm:text-sm md:text-base lg:text-lg">
                     <div className="w-full">
           <motion.div
   initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
@@ -57,10 +57,10 @@ export default function Home() {
 </motion.div>
 </div>
         <div
-          className="flex flex-1 flex-col items-center justify-center min-h-screen py-8 pb-28 sm:pb-24 font-sans relative z-10"
+          className="flex flex-1 flex-col items-center justify-center min-h-screen py-8 pb-20 sm:pb-24 font-sans relative z-10"
         >
 
-          <main className="w-full max-w-4xl space-y-8 mt-12 mb-8 px-6 sm:px-12 md:px-16 lg:px-20">
+          <main className="w-full max-w-4xl space-y-8 px-6 sm:px-3 md:px-4 lg:px-20">
             <section className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between gap-6">
               <div className="space-y-1 w-full sm:w-auto">
                 <BlurText
@@ -68,14 +68,14 @@ export default function Home() {
                   delay={15}
                   animateBy="words"
                   direction="top"
-                  className="text-3xl sm:text-4xl font-extrabold tracking-tight text-center sm:text-left"
+                  className="text-xl sm:text-3xl font-extrabold tracking-tight text-center"
                 />
                 <BlurText
                   text="20 year old hacking internet"
                   delay={15}
                   animateBy="words"
                   direction="top"
-                  className="text-base sm:text-lg text-muted-foreground text-center sm:text-left"
+                  className="text-sm sm:text-lg text-muted-foreground text-center"
                 />
               </div>
               <div className="shrink-0 relative">
@@ -140,7 +140,7 @@ export default function Home() {
                     viewport={{ once: true }}
                     className="flex items-center justify-between gap-3 rounded-xl border border-white/10 p-3"
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2">
                       {(() => {
                         const logoSrc = job.title === "Pocketsflow" ? "/pocketsflow logo.png" : job.title === "Traviflow" ? "/traviflow logo.png" : null;
                         return logoSrc ? (
