@@ -43,24 +43,24 @@ export default function Home() {
     { icon: <ModeToggle />, label: "Theme" }
   ];
   return (
-      <div className="relative min-h-screen flex flex-col">
+      <div className="relative min-h-screen flex flex-col bg-black text-sm  pl-20 pr-20">
         <div
           className="flex flex-1 flex-col items-center justify-center min-h-screen py-8 pb-28 sm:pb-24 font-sans relative z-10"
         >
 
           <main className="w-full max-w-4xl space-y-8 mt-12 mb-8 px-6 sm:px-12 md:px-16 lg:px-20">
             <section className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between gap-6">
-              <div className="space-y-2 w-full sm:w-auto">
+              <div className="space-y-1 w-full sm:w-auto">
                 <BlurText
                   text="Hi, Berlin here"
-                  delay={100}
+                  delay={15}
                   animateBy="words"
                   direction="top"
                   className="text-3xl sm:text-4xl font-extrabold tracking-tight text-center sm:text-left"
                 />
                 <BlurText
                   text="20 year old hacking internet"
-                  delay={120}
+                  delay={15}
                   animateBy="words"
                   direction="top"
                   className="text-base sm:text-lg text-muted-foreground text-center sm:text-left"
@@ -69,27 +69,25 @@ export default function Home() {
               <div className="shrink-0 relative">
                 <TrueFocus
                   sentence="Berlin Niranjan"
-                  manualMode={false}
+                  manualMode={true}
                   blurAmount={5}
                   borderColor="silver"
                   glowColor="rgba(221, 255, 0, 0.6)"
-                  animationDuration={2}
-                  pauseBetweenAnimations={1}
+                  animationDuration={0.4}
+                  pauseBetweenAnimations={0.4}
                 >
-                 
                 </TrueFocus>
                 
               </div>
               
             </section>
-            <div className="w-full aspect-square max-h-[250px] sm:max-h-[350px] md:max-h-[450px] lg:max-h-[500px] mb-20">
+            <div className="w-full aspect-square max-h-[250px] sm:max-h-[350px] md:max-h-[450px] lg:max-h-[500px] mt-[-90]">
             <motion.div
               initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ delay: 0.1, duration: 0.5 }}
               viewport={{ once: true }}
             > 
-            
             <Shader />
             </motion.div>
             </div>
@@ -97,22 +95,22 @@ export default function Home() {
             <section className="space-y-2">
               <BlurText
                 text="About"
-                delay={100}
-                animateBy="words"
+                delay={10}
+                animateBy="characters"
                 direction="top"
                 className="text-lg font-semibold text-center sm:text-left"
               />
               <BlurText
                 text="tldr; learnt by hacking around on the internet."
-                delay={80}
-                animateBy="words"
+                delay={15}
+                animateBy="characters"
                 direction="top"
                 className="text-sm text-muted-foreground max-w-3xl mx-auto sm:mx-0"
               />
               <BlurText
                 text="i like technology and attention. They build software empires."
-                delay={80}
-                animateBy="words"
+                delay={10}
+                animateBy="characters"
                 direction="top"
                 className="text-sm text-muted-foreground max-w-3xl mx-auto sm:mx-0"
               />

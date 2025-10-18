@@ -203,7 +203,7 @@ export default function ParticlesCursorAnimation() {
             value: 0.22,
             min: 0.1,
             max: 1,
-            step: 0.01,
+            step: 0.51,
           },
           speedAlphaMultiplier: {
             value: 0.18,
@@ -241,7 +241,7 @@ export default function ParticlesCursorAnimation() {
         motionBlurStrength: 0.7,
         smoothstepMin: 0.35,
         smoothstepMax: 0.82,
-        fadeSpeed: 0.03,
+        fadeSpeed: 0.3,
         speedAlphaMultiplier: 0.18,
         cursorSmoothing: 0.2,
         cursorLerpStrength: 0.24,
@@ -270,7 +270,7 @@ export default function ParticlesCursorAnimation() {
 
     const context = canvas.getContext("2d");
     if (context) {
-      context.fillStyle = "#000000";
+      context.fillStyle = "transparent";
       context.fillRect(0, 0, canvas.width, canvas.height);
     }
 
@@ -359,7 +359,7 @@ export default function ParticlesCursorAnimation() {
     );
     geo.setAttribute("aAngle", new THREE.BufferAttribute(anglesArray, 1));
 
-    return geo;
+    return geo;3
   }, [planeSize, particleQuantity]);
 
   const material = useMemo(() => {
