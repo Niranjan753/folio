@@ -45,17 +45,17 @@ export default function Home() {
 
   return (
     <>
-    <div className="w-full bg-red-500">
+    <div className="w-full bg-red-900 pb-2">
     <motion.div
 initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
 transition={{ delay: 0.1, duration: 0.5 }}
 viewport={{ once: true }}
-> 
-<Shader />
-<p className="text-white text-center">Aiming for global hegemony</p>
-</motion.div>
-</div>
+>
+    <Shader />
+    <p className="text-white text-center">Aiming for global hegemony</p>
+    </motion.div>
+    </div>
       <div className="relative min-h-screen flex flex-col bg-black text-xs sm:text-sm md:text-base lg:text-lg">
         <div
           className="flex flex-1 flex-col items-center justify-center min-h-screen py-8 pb-20 sm:pb-24 font-sans relative mt- 50"
