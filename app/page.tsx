@@ -46,7 +46,7 @@ export default function Home() {
   return (
     
       <div className="relative min-h-screen flex flex-col bg-black text-xs sm:text-sm md:text-base lg:text-lg">
-                    <div className="w-full mb-7">
+                    <div className="w-full">
           <motion.div
   initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
   whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
