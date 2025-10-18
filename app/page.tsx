@@ -7,6 +7,7 @@ import TrueFocus from "../components/TrueFocus";
 import BlurText from "../components/BlurText";
 import { motion } from "motion/react";
 import { ModeToggle } from "../components/ModeToggle";
+import Shader from "../components/shader";
 
 
 export default function Home() {
@@ -81,7 +82,17 @@ export default function Home() {
               </div>
               
             </section>
-
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              viewport={{ once: true }}
+            > 
+            
+            <Shader />
+            </motion.div>
+            
             <section className="space-y-2">
               <BlurText
                 text="About"
@@ -278,6 +289,8 @@ export default function Home() {
                 ))}
               </div>
             </section>
+           
+
             <section className="space-y-3">
               <BlurText
                 text="some picks for you"
