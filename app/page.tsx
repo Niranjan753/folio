@@ -54,8 +54,9 @@ viewport={{ once: true }}
 >
     <Shader />
     </motion.div>
-    <p className="text-white text-center">Aiming for global hegemony</p>
     </div>
+    <p className="text-white text-center">Aiming for global hegemony</p>
+
       <div className="relative min-h-screen flex flex-col bg-black text-xs sm:text-sm md:text-base lg:text-lg">
         <div
           className="flex flex-1 flex-col items-center justify-center min-h-screen py-8 pb-20 sm:pb-24 font-sans relative mt- 50"
