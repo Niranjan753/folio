@@ -42,8 +42,20 @@ export default function Home() {
     { icon: <Instagram size={18} />, label: "Instagram", onClick: () => window.open("https://www.instagram.com/berlified/", "_blank", "noopener,noreferrer") },
     // { icon: <ModeToggle />, label: "Theme" }
   ];
+
   return (
+    
       <div className="relative min-h-screen flex flex-col bg-black text-sm  pl-20 pr-20">
+                    <div className="w-full">
+          <motion.div
+  initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+  transition={{ delay: 0.1, duration: 0.5 }}
+  viewport={{ once: true }}
+> 
+<Shader />
+</motion.div>
+</div>
         <div
           className="flex flex-1 flex-col items-center justify-center min-h-screen py-8 pb-28 sm:pb-24 font-sans relative z-10"
         >
@@ -81,16 +93,7 @@ export default function Home() {
               </div>
               
             </section>
-            <div className="w-full aspect-square max-h-[250px] sm:max-h-[350px] md:max-h-[450px] lg:max-h-[500px] mt-[-90]">
-            <motion.div
-              initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              viewport={{ once: true }}
-            > 
-            <Shader />
-            </motion.div>
-            </div>
+
 
             <section className="space-y-2">
               <BlurText
