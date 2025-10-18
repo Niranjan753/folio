@@ -82,7 +82,7 @@ export default function Home() {
               </div>
               
             </section>
-            
+            <div className="w-full aspect-square max-h-[250px] sm:max-h-[350px] md:max-h-[450px] lg:max-h-[500px] mb-20">
             <motion.div
               initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -92,7 +92,8 @@ export default function Home() {
             
             <Shader />
             </motion.div>
-            
+            </div>
+
             <section className="space-y-2">
               <BlurText
                 text="About"
