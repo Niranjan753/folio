@@ -45,7 +45,7 @@ export default function Home() {
 
   return (
     <>
-    <div className="w-full bg-red-900 pb-2">
+    <div className="w-full bg-red-900 pb-2 max-h-[256px] relative">
     <motion.div
 initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -53,6 +53,7 @@ transition={{ delay: 0.1, duration: 0.5 }}
 viewport={{ once: true }}
 >
     <Shader />
+
     </motion.div>
     </div>
     <p className="text-white text-center">Aiming for global hegemony</p>
