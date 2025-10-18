@@ -84,7 +84,7 @@ export default function Home() {
               <div className="shrink-0 relative">
                 <TrueFocus
                   sentence="Berlin Niranjan"
-                  manualMode={true}
+                  manualMode={false}
                   blurAmount={5}
                   borderColor="silver"
                   glowColor="rgba(221, 255, 0, 0.6)"
