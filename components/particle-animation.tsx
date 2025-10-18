@@ -311,7 +311,7 @@ export default function ParticlesCursorAnimation() {
 
   const planeSize = useMemo(() => {
     if (!(camera instanceof THREE.PerspectiveCamera))
-      return { width: 10, height: 10, aspect: 1 };
+      return { width: 5, height: 5, aspect: 1 };
 
     const cameraDistance = 18;
     const vFov = (camera.fov * Math.PI) / 180;
@@ -321,8 +321,8 @@ export default function ParticlesCursorAnimation() {
     const visibleWidth = visibleHeight * canvasAspect;
 
     return {
-      width: visibleWidth * 0.9,
-      height: visibleHeight * 0.9,
+      width: visibleWidth * 1.3,
+      height: visibleHeight * 1,
       aspect: canvasAspect,
     };
   }, [camera, size]);
