@@ -53,8 +53,8 @@ transition={{ delay: 0.1, duration: 0.5 }}
 viewport={{ once: true }}
 >
     <Shader />
-    <p className="text-white text-center">Aiming for global hegemony</p>
     </motion.div>
+    <p className="text-white text-center">Aiming for global hegemony</p>
     </div>
       <div className="relative min-h-screen flex flex-col bg-black text-xs sm:text-sm md:text-base lg:text-lg">
         <div
