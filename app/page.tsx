@@ -40,7 +40,7 @@ export default function Home() {
       onClick: () => window.open("https://traviflow.com", "_blank", "noopener,noreferrer")
     },
     { icon: <Instagram size={18} />, label: "Instagram", onClick: () => window.open("https://www.instagram.com/berlified/", "_blank", "noopener,noreferrer") },
-    { icon: <ModeToggle />, label: "Theme" }
+    // { icon: <ModeToggle />, label: "Theme" }
   ];
   return (
       <div className="relative min-h-screen flex flex-col bg-black text-sm  pl-20 pr-20">

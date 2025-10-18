@@ -29,22 +29,22 @@ function DockItem({ children, className = '', onClick, mouseX, spring, distance,
   };
 
   // Add a subtle glow and scale effect on hover
-  const scale = useTransform(isHovered, [0, 1], [1, 1.08]);
-  const boxShadowDark = useTransform(
-    isHovered,
-    [0, 1],
-    [
-      '0 2px 8px 0 rgba(0,0,0,0.25)',
-      '0 4px 24px 0 rgba(255,255,255,0.15), 0 0 20px 4px rgba(255,255,255,0.2)'
-    ]
-  );
+  // const scale = useTransform(isHovered, [0, 1], [1, 1.08]);
+  // const boxShadowDark = useTransform(
+  //   isHovered,
+  //   [0, 1],
+  //   [
+  //     '0 2px 8px 0 rgba(0,0,0,0.25)',
+  //     '0 4px 24px 0 rgba(255,255,255,0.15), 0 0 20px 4px rgba(255,255,255,0.2)'
+  //   ]
+  // );
   return (
     <motion.div
       ref={ref}
       style={{
         width: size,
-        height: size,
-        scale
+        height: size
+        // scale
       }}
       onHoverStart={() => isHovered.set(1)}
       onHoverEnd={() => isHovered.set(0)}
@@ -72,7 +72,7 @@ function DockItem({ children, className = '', onClick, mouseX, spring, distance,
       <motion.div
         className="absolute inset-0 pointer-events-none rounded-xl sm:rounded-2xl"
         style={{
-          boxShadow: boxShadowDark,
+          // boxShadow: boxShadowDark,
           opacity: isHovered
         }}
       />
