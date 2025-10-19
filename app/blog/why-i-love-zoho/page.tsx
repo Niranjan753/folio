@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 import BlurText from '../../../components/BlurText';
 import Dock from '../../../components/Dock';
 import { ArrowLeft, Calendar, Clock, Home as HomeIcon, Github, Instagram, BookOpen } from "lucide-react";
-import { ModeToggle } from '../../../components/ModeToggle';
+
 
 const ZohoBlogPage = () => {
   const dockItems = [

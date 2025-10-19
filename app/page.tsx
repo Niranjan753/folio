@@ -56,7 +56,7 @@ export default function Home() {
         <Shader />
       </motion.div>
     </div>
-    <p className="text-white text-center mt-2">Aiming for global hegemony</p>
+    <p className="text-white text-center pt-2 bg-black">Aiming for global hegemony</p>
 
       <div className="relative min-h-screen flex flex-col bg-black text-xs sm:text-sm md:text-base lg:text-lg">
         <div
