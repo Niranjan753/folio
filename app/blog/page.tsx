@@ -7,7 +7,6 @@ import { motion } from "motion/react";
 import BlurText from '../../components/BlurText';
 import Dock from '../../components/Dock';
 import { Calendar, Clock, ArrowRight, Home as HomeIcon, Github, Instagram, BookOpen } from "lucide-react";
-import { ModeToggle } from '../../components/ModeToggle';
 
 const Blog = () => {
   const blogPosts = [
@@ -50,8 +49,7 @@ const Blog = () => {
       label: "Traviflow",
       onClick: () => window.open("https://traviflow.com", "_blank", "noopener,noreferrer")
     },
-    { icon: <Instagram size={18} />, label: "Instagram", onClick: () => window.open("https://www.instagram.com/berlified/", "_blank", "noopener,noreferrer") },
-    // { icon: <ModeToggle />, label: "Theme" }
+    { icon: <Instagram size={18} />, label: "Instagram", onClick: () => window.open("https://www.instagram.com/berlified/", "_blank", "noopener,noreferrer") }
   ];
 
   return (
@@ -72,7 +70,7 @@ const Blog = () => {
               delay={120}
               animateBy="words"
               direction="top"
-              className="text-lg text-muted-foreground"
+              className="text-lg text-gray-400"
             />
           </div>
 
@@ -107,7 +105,7 @@ const Blog = () => {
                         className="text-xl font-bold leading-tight group-hover:text-primary transition-colors duration-200"
                       />
                       
-                      <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                      <div className="flex items-center gap-4 text-xs text-gray-400">
                         <div className="flex items-center gap-1">
                           <Calendar size={12} />
                           <span>{post.date}</span>
@@ -125,7 +123,7 @@ const Blog = () => {
                       delay={100}
                       animateBy="words"
                       direction="top"
-                      className="text-sm text-muted-foreground leading-relaxed"
+                      className="text-sm text-gray-400 leading-relaxed"
                     />
 
                     {/* Read More Button */}
@@ -154,7 +152,7 @@ const Blog = () => {
               delay={200}
               animateBy="words"
               direction="top"
-              className="text-sm text-muted-foreground"
+              className="text-sm text-gray-400"
             />
           </div>
         </div>

@@ -38,8 +38,7 @@ const ZohoBlogPage = () => {
       label: "Traviflow",
       onClick: () => window.open("https://traviflow.com", "_blank", "noopener,noreferrer")
     },
-    { icon: <Instagram size={18} />, label: "Instagram", onClick: () => window.open("https://www.instagram.com/berlified/", "_blank", "noopener,noreferrer") },
-    // { icon: <ModeToggle />, label: "Theme" }
+    { icon: <Instagram size={18} />, label: "Instagram", onClick: () => window.open("https://www.instagram.com/berlified/", "_blank", "noopener,noreferrer") }
   ];
 
   return (
@@ -55,7 +54,7 @@ const ZohoBlogPage = () => {
       >
         <Link 
           href="/blog"
-          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-100 group"
+          className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-100 group"
         >
           <motion.div
             animate={{ x: [-2, 0] }}
@@ -104,10 +103,10 @@ const ZohoBlogPage = () => {
           delay={30}
           animateBy="words"
           direction="top"
-          className="text-lg text-muted-foreground leading-relaxed mb-6"
+          className="text-lg text-gray-400 leading-relaxed mb-6"
         />
 
-        <div className="flex items-center gap-6 text-sm text-muted-foreground">
+        <div className="flex items-center gap-6 text-sm text-gray-400">
           <div className="flex items-center gap-2">
             <Calendar size={16} />
             <span>October 2025</span>
@@ -124,7 +123,7 @@ const ZohoBlogPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="prose prose-lg max-w-none dark:prose-invert prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-li:text-foreground relative"
+        className="prose prose-lg max-w-none prose-invert prose-headings:text-white prose-p:text-white prose-strong:text-white prose-li:text-white relative"
       >
         {/* Decorative Zoho logo floating in the background */}
         {/* <div className="pointer-events-none absolute -top-16 -right-16 opacity-10 blur-2xl select-none hidden sm:block">
@@ -219,7 +218,7 @@ const ZohoBlogPage = () => {
         <p>
           As a builder, I've always admired companies that choose the harder, slower, but ultimately more rewarding path of bootstrapping. It's not just about retaining equity or control—it's about building a business that's <em>real</em>. Every dollar earned is a validation from a customer, not an investor. Every feature shipped is driven by user need, not a pitch deck.
         </p>
-        <blockquote className="border-l-4 border-primary pl-4 italic text-muted-foreground my-6">
+        <blockquote className="border-l-4 border-primary pl-4 italic text-gray-400 my-6">
           Bootstrapping forces you to be scrappy, creative, and customer-obsessed. It teaches you discipline and resilience. And most importantly, it lets you build a company on your own terms.
         </blockquote>
         
@@ -232,7 +231,7 @@ const ZohoBlogPage = () => {
         </p>
         <div className="flex items-center gap-3 my-6">
           <Image src="/pocketsflow logo.png" alt="Pocketsflow logo" width={40} height={40} className="object-contain rounded-full bg-white/10 p-1" />
-          <span className="text-base text-muted-foreground">Inspired by Zoho's journey</span>
+          <span className="text-base text-gray-400">Inspired by Zoho's journey</span>
         </div>
         <p>
           Zoho's journey gives us the confidence that it's possible to build something meaningful without external capital. It reminds us that culture, product, and customer obsession matter more than headlines or valuations. And it proves that, with patience and perseverance, bootstrapped companies can not only survive—but thrive—on the global stage.
@@ -265,7 +264,7 @@ const ZohoBlogPage = () => {
             delay={100}
             animateBy="words"
             direction="top"
-            className="text-sm text-muted-foreground mb-4"
+            className="text-sm text-gray-400 mb-4"
           />
           {/* <Link 
             href="/blog"

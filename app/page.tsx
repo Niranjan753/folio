@@ -6,7 +6,6 @@ import { Home as HomeIcon, Github, Instagram, BookOpen } from "lucide-react";
 import TrueFocus from "../components/TrueFocus";
 import BlurText from "../components/BlurText";
 import { motion } from "motion/react";
-import { ModeToggle } from "../components/ModeToggle";
 import Shader from "../components/shader";
 
 
@@ -39,8 +38,7 @@ export default function Home() {
       label: "Traviflow",
       onClick: () => window.open("https://traviflow.com", "_blank", "noopener,noreferrer")
     },
-    { icon: <Instagram size={18} />, label: "Instagram", onClick: () => window.open("https://www.instagram.com/berlified/", "_blank", "noopener,noreferrer") },
-    // { icon: <ModeToggle />, label: "Theme" }
+    { icon: <Instagram size={18} />, label: "Instagram", onClick: () => window.open("https://www.instagram.com/berlified/", "_blank", "noopener,noreferrer") }
   ];
 
   return (
@@ -78,7 +76,7 @@ export default function Home() {
                   delay={15}
                   animateBy="words"
                   direction="top"
-                  className="text-sm sm:text-lg text-muted-foreground text-center"
+                  className="text-sm sm:text-lg text-gray-400 text-center"
                 />
               </div>
               <div className="shrink-0 relative">
@@ -111,14 +109,14 @@ export default function Home() {
                 delay={15}
                 animateBy="characters"
                 direction="top"
-                className="text-sm text-muted-foreground max-w-3xl mx-auto sm:mx-0"
+                className="text-sm text-gray-400 max-w-3xl mx-auto sm:mx-0"
               />
               <BlurText
                 text="i like technology and attention. They build software empires."
                 delay={10}
                 animateBy="characters"
                 direction="top"
-                className="text-sm text-muted-foreground max-w-3xl mx-auto sm:mx-0"
+                className="text-sm text-gray-400 max-w-3xl mx-auto sm:mx-0"
               />
             </section>
 
@@ -209,7 +207,7 @@ export default function Home() {
                           delay={100}
                           animateBy="words"
                           direction="top"
-                          className="text-xs text-muted-foreground"
+                          className="text-xs text-gray-400"
                         />
                       </div>
                     </div>
@@ -218,7 +216,7 @@ export default function Home() {
                       delay={120}
                       animateBy="words"
                       direction="top"
-                      className="text-xs text-muted-foreground whitespace-nowrap"
+                      className="text-xs text-gray-400 whitespace-nowrap"
                     />
                   </motion.li>
                 ))}
@@ -257,7 +255,7 @@ export default function Home() {
                       delay={100}
                       animateBy="words"
                       direction="top"
-                      className="text-xs text-muted-foreground"
+                      className="text-xs text-gray-400"
                     />
                   </div>
                 </div>
@@ -266,7 +264,7 @@ export default function Home() {
                   delay={120}
                   animateBy="words"
                   direction="top"
-                  className="text-xs text-muted-foreground whitespace-nowrap"
+                  className="text-xs text-gray-400 whitespace-nowrap"
                 />
               </motion.div>
             </section>
@@ -379,13 +377,13 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="mx-auto h-1 w-8 rounded-full bg-white/50"
               />
-              <div className="text-xs text-muted-foreground">
+              <div className="text-xs text-gray-400">
                 <BlurText
                   text="say hello on"
                   delay={100}
                   animateBy="words"
                   direction="top"
-                  className="text-xs text-muted-foreground inline mr-1"
+                  className="text-xs text-gray-400 inline mr-1"
                 />
                 <motion.a
                   initial={{ opacity: 0, filter: "blur(10px)" }}
