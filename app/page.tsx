@@ -20,7 +20,7 @@ export default function Home() {
   const contacts = [
     { name: "github.md", url: "https://github.com/Niranjan753" },
     { name: "instagram.md", url: "https://www.instagram.com/berlified/" },
-    { name: "mail.txt", url: "mailto:berlin@example.com" },
+    { name: "mail.txt", url: "mailto:niranjanr753@gmail.com" },
     { name: "blog.sh", url: "/blog" }
   ];
 
