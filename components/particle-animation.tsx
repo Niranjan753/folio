@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useMemo, useState } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
-import * as THREE from "three";
+import * as THREE from "@/node_modules/@types/three";
 import { useControls, folder } from "leva";
 
 const vertexShader = `
