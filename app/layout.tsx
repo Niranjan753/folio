@@ -4,9 +4,9 @@ import "./globals.css";
 import { ThemeProvider } from "../components/theme-provider";
 import FooterContact from "../components/FooterContact";
 
-const codeSaver = localFont({
-  src: "../public/fonts/CodeSaver-Regular.otf",
-  variable: "--font-codesaver",
+const approachMono = localFont({
+  src: "../public/fonts/ApproachMonoTRIAL-Md.otf",
+  variable: "--font-approach-mono",
   display: "swap",
 });
 
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${codeSaver.variable} antialiased`}>
+      <body className={`${approachMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
           <FooterContact />
