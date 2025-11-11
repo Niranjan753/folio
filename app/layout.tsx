@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "../components/theme-provider";
-import FooterContact from "../components/FooterContact";
 
 const approachMono = localFont({
   src: "../public/fonts/ApproachMonoTRIAL-Md.otf",
@@ -11,8 +10,8 @@ const approachMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Berlin",
-  description: "about me",
+  title: "Berlin | Niranjan",
+  description: "Builder designing for clarity",
 };
 
 export default function RootLayout({
@@ -23,9 +22,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${approachMono.variable} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           {children}
-          <FooterContact />
         </ThemeProvider>
       </body>
     </html>

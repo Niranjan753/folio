@@ -1,152 +1,80 @@
-import Link from "next/link";
-import { ModeToggle } from "../components/ModeToggle";
+import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
+import PageTransition from "../components/PageTransition";
 
 export default function Home() {
-  const featuredProjects = [
-    {
-      title: "Pocketsflow",
-      summary: "Modern payments infrastructure for internet businesses.",
-      href: "https://pocketsflow.com",
-      meta: "Co‑founder • Product & Systems",
-      stack: ["TypeScript", "Next.js", "Stripe", "MongoDB"],
-    },
-    {
-      title: "Traviflow",
-      summary: "Trip planning and booking with a focus on simplicity.",
-      href: "https://traviflow.com",
-      meta: "Co‑founder • Mobile App",
-      stack: ["SwiftUI", "MongoDB", "Maps"],
-    },
-  ];
-
-  const links = [
-    { label: "GitHub", href: "https://github.com/Niranjan753" },
-    { label: "Instagram", href: "https://www.instagram.com/berlified/" },
-    { label: "Mail", href: "mailto:niranjanr753@gmail.com" },
-    { label: "Writing", href: "/blog" },
-  ];
-
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto max-w-5xl px-6 py-12 md:py-16">
-        <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
-          {/* Left: Intro / Sticky */}
-          <aside className="md:sticky md:top-16 self-start">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="text-xs uppercase tracking-wide text-muted-foreground">Berlin | Niranjan</div>
-                <div className="h-8 w-8 rounded-md border flex items-center justify-center">
-                  <ModeToggle />
+    <main className="min-h-screen bg-background text-foreground flex flex-col">
+      <Navigation />
+
+      <PageTransition>
+        {/* Hero Section - Full viewport */}
+        <section className="flex-1 flex items-center">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 py-12 sm:py-16 md:py-20 w-full">
+            <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 md:gap-20 lg:gap-24 items-start">
+              {/* Left Column */}
+              <div className="space-y-8 md:space-y-10 max-w-2xl">
+                <div className="space-y-8 md:space-y-10">
+                <h1 className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] font-normal tracking-tight leading-[1.15]">
+                  Builder designing<br />
+                  for clarity.
+                </h1>
+                
+                <div className="space-y-5 md:space-y-6 text-muted-foreground leading-[1.7] text-[13px] sm:text-[14px]">
+                  <p>
+                    Co‑founder at <a className="text-foreground hover:underline" href="https://pocketsflow.com" target="_blank" rel="noreferrer">Pocketsflow</a> &{" "}
+                    <a className="text-foreground hover:underline" href="https://traviflow.com" target="_blank" rel="noreferrer">Traviflow</a>. B.Tech CSE. I build products that feel obvious.
+                  </p>
+
+                  <p>
+                    I craft simple, durable interfaces and systems. My current focus is internet payments and travel. Outside of building, I enjoy writing about products and process.
+                  </p>
                 </div>
-              </div>
-              <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
-                Builder designing for clarity.
-              </h1>
-              <p className="text-muted-foreground">
-                Co‑founder at <a className="underline" href="https://pocketsflow.com" target="_blank" rel="noreferrer">Pocketsflow</a> & {""}
-                <a className="underline" href="https://traviflow.com" target="_blank" rel="noreferrer">Traviflow</a>. B.Tech CSE. I build products that feel obvious.
-              </p>
-              <div className="flex flex-wrap gap-2 pt-2">
-                {links.map((l) => (
-                  <a
-                    key={l.label}
-                    href={l.href}
-                    target={l.href.startsWith("http") ? "_blank" : undefined}
-                    rel={l.href.startsWith("http") ? "noreferrer" : undefined}
-                    className="rounded-full border px-3 py-1 text-sm hover:bg-secondary"
-                  >
-                    {l.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </aside>
 
-          {/* Right: Content */}
-          <section className="space-y-12">
-            {/* About */}
-            <div className="space-y-3">
-              <div className="text-sm font-medium text-muted-foreground">About</div>
-              <p className="leading-relaxed text-foreground/90">
-                I craft simple, durable interfaces and systems. My current focus is
-                internet payments and travel. Outside of building, I enjoy writing about
-                products and process.
-              </p>
-            </div>
-
-            {/* Work / Projects */}
-            <div className="space-y-6">
-              <div className="text-sm font-medium text-muted-foreground">Work</div>
-              <div className="divide-y divide-[var(--border)] border rounded-lg overflow-hidden">
-                {featuredProjects.map((p) => (
+                <div className="flex flex-wrap gap-3">
                   <a
-                    key={p.title}
-                    href={p.href}
+                    href="https://github.com/Niranjan753"
                     target="_blank"
                     rel="noreferrer"
-                    className="block p-5 hover:bg-secondary transition-colors"
+                    className="text-[13px] sm:text-[14px] text-foreground hover:text-muted-foreground transition-colors"
                   >
-                    <div className="flex flex-col gap-1">
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-semibold tracking-tight">{p.title}</h3>
-                        <span className="text-xs text-muted-foreground">{p.meta}</span>
-                      </div>
-                      <p className="text-muted-foreground">{p.summary}</p>
-                      <div className="mt-2 flex flex-wrap gap-2">
-                        {p.stack.map((s) => (
-                          <span
-                            key={s}
-                            className="rounded border bg-secondary px-2 py-0.5 text-xs text-muted-foreground"
-                          >
-                            {s}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                    GitHub
                   </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Writing */}
-            <div className="space-y-4">
-              <div className="text-sm font-medium text-muted-foreground">Writing</div>
-              <div className="rounded-lg border p-5">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="font-medium">Thoughts</div>
-                    <p className="text-sm text-muted-foreground">Thoughts on building and learning.</p>
-                  </div>
-                  <Link href="/blog" className="text-blue-600 hover:underline text-sm">View all →</Link>
+                  <span className="text-muted-foreground">•</span>
+                  <a
+                    href="https://www.instagram.com/berlified/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-[13px] sm:text-[14px] text-foreground hover:text-muted-foreground transition-colors"
+                  >
+                    Instagram
+                  </a>
+                  <span className="text-muted-foreground">•</span>
+                  <a
+                    href="mailto:niranjanr753@gmail.com"
+                    className="text-[13px] sm:text-[14px] text-foreground hover:text-muted-foreground transition-colors"
+                  >
+                    Mail
+                  </a>
+                  <span className="text-muted-foreground">•</span>
+                  <a
+                    href="/writing"
+                    className="text-[13px] sm:text-[14px] text-foreground hover:text-muted-foreground transition-colors"
+                  >
+                    Writing
+                  </a>
+                </div>
                 </div>
               </div>
-            </div>
 
-            {/* Contact */}
-            <div className="space-y-3">
-              <div className="text-sm font-medium text-muted-foreground">Contact</div>
-              <div className="flex flex-wrap gap-2">
-                {links.map((l) => (
-                  <a
-                    key={l.label + "-contact"}
-                    href={l.href}
-                    target={l.href.startsWith("http") ? "_blank" : undefined}
-                    rel={l.href.startsWith("http") ? "noreferrer" : undefined}
-                    className="rounded-full border px-3 py-1 text-sm hover:bg-secondary"
-                  >
-                    {l.label}
-                  </a>
-                ))}
-              </div>
+              {/* Right Column - Empty space for balance */}
+              <div className="hidden lg:block"></div>
             </div>
+          </div>
+        </section>
+      </PageTransition>
 
-            {/* Footer mini */}
-            <div className="pt-4 text-xs text-muted-foreground">
-              © {new Date().getFullYear()} Berlin |  Niranjan
-            </div>
-          </section>
-        </div>
-      </div>
+      <Footer />
     </main>
   );
 }
