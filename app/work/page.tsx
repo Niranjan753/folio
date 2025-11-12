@@ -19,6 +19,13 @@ export default function WorkPage() {
       stack: ["SwiftUI", "MongoDB", "Maps"],
       href: "https://traviflow.com",
     },
+    {
+      title: "Live Docs",
+      role: "Founder",
+      description: "An attempt to make college experience better",
+      stack: ["Next.js", "Supabase", "Clerk Auth"],
+      href: "https://livedocs.xyz",
+    }
   ];
 
   return (
@@ -53,7 +60,7 @@ export default function WorkPage() {
                   rel="noreferrer"
                   className="block group"
                 >
-                  <div className="space-y-3">
+                  <div className="space-y-3 border border-border/75 rounded-lg p-5 hover:shadow transition-shadow bg-background">
                     <div>
                       <h3 className="text-[16px] font-normal text-foreground group-hover:text-muted-foreground transition-colors">
                         {project.title}

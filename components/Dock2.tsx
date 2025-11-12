@@ -28,8 +28,20 @@ const items = [
         />
       ),
       label: "Traviflow",
-      onClick: () => window.open("https://traviflow.com", "_blank", "noopener,noreferrer")
+      onClick: () => window.open("https://livenotes.xyz", "_blank", "noopener,noreferrer")
     },
+    { icon: (
+      <Image
+        src="/pocketsflow logo.png"
+        alt="livenotes"
+        width={18}
+        height={18}
+        className="object-contain"
+      />
+    ),
+    label: "livenotes",
+    onClick: () => window.open("https://pocketsflow.com", "_blank", "noopener,noreferrer")
+  },
     { icon: <Instagram size={18} />, label: "Instagram", onClick: () => window.open("https://www.instagram.com/berlified/", "_blank", "noopener,noreferrer") },
     // { icon: <ModeToggle />, label: "Theme" }
   ];
