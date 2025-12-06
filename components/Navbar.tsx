@@ -1,13 +1,11 @@
-"Use Client"
 import React from 'react'
-import PillNav from '@/components/PillNav'
-import logo from '/public/logo.svg'
+import PillNav from './PillNav'
+import logo from '/logo.svg';
 
-
-const page = () => {
+const Navbar = () => {
   return (
-    <div className='flex justify-center'>
-      <PillNav
+    <div>
+<PillNav
   logo={logo}
   logoAlt="Company Logo"
   items={[
@@ -28,4 +26,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Navbar
