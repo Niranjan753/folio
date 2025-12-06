@@ -1,20 +1,20 @@
 "Use Client"
 import React from 'react'
 import PillNav from '@/components/PillNav'
-import logo from '/public/logo.svg'
+const logo = '/logo.png'
 
 
 const page = () => {
   return (
     <div className='flex justify-center'>
       <PillNav
-  logo={logo}
+  logo="/logo.png"
   logoAlt="Company Logo"
   items={[
     { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
-    { label: 'Services', href: '/services' },
-    { label: 'Contact', href: '/contact' }
+    { label: 'Writings', href: '/blogs' },
+    { label: 'Me', href: '/about' },
+    { label: 'Products', href: '/product' }
   ]}
   activeHref="/"
   className="custom-nav"
